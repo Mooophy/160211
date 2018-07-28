@@ -14,6 +14,6 @@ disp(B1);
 
 B2 = eye(4); 
 for i = 1 : n 
-    B2(i,:) = A .^ (i - 1); 
+    B2(i, :) = A .^ (i - 1); 
 end
 disp(B2);
