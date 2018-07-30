@@ -50,9 +50,11 @@ for i = 1 : n
 end
 disp(B2);
 
+% Problem 3
+
 clear
 format rational;
-% Problem 3
+
 % a
 v{1} = (1:5);
 v{2} = (6:10);
