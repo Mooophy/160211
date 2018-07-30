@@ -49,3 +49,27 @@ for i = 1 : n
     B2(i,:) = A .^ (i - 1); 
 end
 disp(B2);
+
+clear
+format rational;
+% Problem 3
+% a
+v{1} = (1:5);
+v{2} = (6:10);
+v{3} = (11:15);
+v{4} = (16:20);
+
+% b
+A = [v{1}; v{2}; v{3}; v{4}];
+
+% c
+[L, U] = lu(A);
+
+% d 
+%
+% tc  
+%
+
+% e
+r = rank(A);
+n = 5 - r;
