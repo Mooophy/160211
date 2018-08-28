@@ -1,5 +1,7 @@
 function y = symm(x)
-% to be added
+
+% Returns true if the input is symmetric.
+
 [m, n] = size(x);
 
 if(m ~= n)
