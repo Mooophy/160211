@@ -8,3 +8,5 @@ if(all(a == 0) || all(b == 0))
 end
 
 y=acosd(dot(a,b)/norm(a)*norm(b));
+
+end
