@@ -6,7 +6,7 @@ function y = symm(x)
 
 if(m ~= n)
     y = 0;
-    return 
+    return
 end
 
 y = isequal(x, x');
