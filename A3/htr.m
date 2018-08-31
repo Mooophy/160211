@@ -1,6 +1,6 @@
 function y = htr(u)
 
-%Returns Householder transformation that transform u to [t, 0, 0 ...]
+%Returns Householder transformation that transforms u to [t, 0, 0 ...]
 
 [r, ~] = size(u);
 
