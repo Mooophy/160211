@@ -4,7 +4,7 @@ function y = short(A,x)
 
 Q = orth(A);
 
-projection = @(v)((dot(x,v)/dot(v,v))*v);
+projection = @(v)(dot(x,v)/dot(v,v))*v;
 
 s = sum([ projection(Q(:, 1)),  projection(Q(:, 2))]);
 
