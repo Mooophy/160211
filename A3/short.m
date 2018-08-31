@@ -10,7 +10,7 @@ proj = @(v)(dot(x,v)/dot(v,v))*v;
 
 projected = zeros(size(Basis));
 
-for c = 1: cs
+for c = 1 : cs
     projected(:, c) = proj(Basis(:, c));
 end
 
