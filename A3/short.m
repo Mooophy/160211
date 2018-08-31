@@ -1,21 +1,19 @@
 function y = short(A,x)
 
-%Retuns
+%Retuns the shortest distance from x to CS(A).
 
-Q = orth(A);
+Basis = orth(A);
 
-projection = @(v)(dot(x,v)/dot(v,v))*v;
+proj = @(v)(dot(x,v)/dot(v,v))*v;
 
-projected = [];
+[~, cs] = size(Basis);
 
-[~, columns] = size(Q); 
+projected = zeros(size(Basis));
 
-for c = 1: columns
-    projected = [projected, projection(Q(:, c))];
+for c = 1: cs
+    projected(:, c) = proj(Basis(:, c));
 end
 
-s = sum(projected);
-
-y = norm(x - s);
+y = norm(x - sum(projected));
 
 end
