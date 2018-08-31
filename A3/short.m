@@ -1,6 +1,6 @@
 function y = short(A,x)
 
-%Retuns the shortest distance from x to CS(A).
+%Returns the shortest distance from x to CS(A).
 
 Basis = orth(A);
 
