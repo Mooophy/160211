@@ -6,7 +6,15 @@ Q = orth(A);
 
 projection = @(v)(dot(x,v)/dot(v,v))*v;
 
-s = sum([ projection(Q(:, 1)),  projection(Q(:, 2))]);
+projected = [];
+
+[~, columns] = size(Q); 
+
+for c = 1: columns
+    projected = [projected, projection(Q(:, c))];
+end
+
+s = sum(projected);
 
 y = norm(x - s);
 
