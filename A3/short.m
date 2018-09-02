@@ -2,18 +2,15 @@ function y = short(A,x)
 
 %Returns the shortest distance from x to CS(A).
 
+proj = @(v)(dot(x,v)/norm(v)^2)*v;
+
 Basis = orth(A);
-
-proj = @(v)(dot(x,v)/dot(v,v))*v;
-
 [~, cs] = size(Basis);
-
-projected = zeros(size(Basis));
+accumulated = [0 0 0 0]';
 
 for c = 1 : cs
-    projected(:, c) = proj(Basis(:, c));
+    accumulated = accumulated + proj(Basis(:, c));
 end
 
-y = norm(x - sum(projected));
-
+y = norm(x - accumulated);
 end
