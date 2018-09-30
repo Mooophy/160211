@@ -1,4 +1,11 @@
-function v = leastsquaresquestion(x, y, d)
+ts = 0.2 : 0.3 : 2 ;
+ys = [3.6766 2.1631 1.1797 0.7326 0.3455 0.3332 0.0996];
+
+v1 = fit(ts', ys', 1);
+
+disp(v1);
+
+function v = fit(x, y, d)
 
 %
 
