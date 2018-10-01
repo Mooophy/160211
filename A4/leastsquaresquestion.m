@@ -6,31 +6,42 @@ v1 = fit(t', y', 1);
 C = exp(v1(1));
 k = v1(2);
 
-disp([C k]);
-
 f1 = @(x) C * exp(k * x);
 y1 = zeros(1, length(ys));
 for i = 1:length(y1)
     y1(i) = f1(ts(i));
 end
-disp(y1);
-
 r1 = residual(y, y1);
-disp(r1)
-
-disp('=================')
+disp('(a) C, k and residual are:')
+disp([C k r1]);
 
 v2 = fit(t', y', 2);
-disp(v2)
 f2 = @(x) v2(1) + v2(2)*x + v2(3)*(x^2);
 y2 = zeros(1, length(ys));
 for i = 1:length(y2)
     y2(i) = f2(ts(i));
 end
+disp('(b) The fitted parameters and the residual are:')
 disp(y2);
+disp(r2);
 
-r2 = residual(y, y2);
-disp(r2)
+disp('(c) As can be see by comparing the two residuals, the second model is better.')
+
+disp('=================Plotting=================');
+
+s(1) = subplot(2,1,1);
+plot(t, log(y), t, (v1(1) + v1(2)*t));
+xlabel('t'); 
+ylabel('log(y)'); 
+title(s(1),'Plot I')
+
+s(2) = subplot(2,1,2);
+plot(t, y, t, (v2(1) + v2(2)*t + v2(3)*t.^2));
+xlabel('t'); 
+ylabel('y'); 
+title(s(2),'Plot II')
+
+disp('=================Done=================');
 
 function v = fit(x, y, d)
 
