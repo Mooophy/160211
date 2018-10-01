@@ -7,9 +7,9 @@ C = exp(v1(1));
 k = v1(2);
 
 f1 = @(x) C * exp(k * x);
-y1 = zeros(1, length(ys));
+y1 = zeros(1, length(y));
 for i = 1:length(y1)
-    y1(i) = f1(ts(i));
+    y1(i) = f1(t(i));
 end
 r1 = residual(y, y1);
 disp('(a) C, k and residual are:')
@@ -17,10 +17,11 @@ disp([C k r1]);
 
 v2 = fit(t', y', 2);
 f2 = @(x) v2(1) + v2(2)*x + v2(3)*(x^2);
-y2 = zeros(1, length(ys));
+y2 = zeros(1, length(y));
 for i = 1:length(y2)
-    y2(i) = f2(ts(i));
+    y2(i) = f2(t(i));
 end
+r2 = residual(y, y2);
 disp('(b) The fitted parameters and the residual are:')
 disp(y2);
 disp(r2);
